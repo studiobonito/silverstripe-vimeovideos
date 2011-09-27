@@ -58,6 +58,17 @@ class VimeoVideo extends DataObject {
 		
 		return $fields;
 	}
+	
+	public function SetAutoplay($autoplay = true) {
+		$this->Autoplay = $autoplay;
+		return $this;
+	}
+	
+	public function SetSize($width = 480, $height = 320) {
+		$this->Height = $height;
+		$this->Width = $width;
+		return $this;
+	}
 
 	public static function VimeoShortCodeHandler($arguments, $caption= null, $parser = null) {
 		if(empty($arguments['id'])) {
