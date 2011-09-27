@@ -58,6 +58,12 @@ class VimeoVideo extends DataObject {
 		
 		return $fields;
 	}
+	
+	public function Resize($width = 480, $height = 320) {
+		$this->Height = $height;
+		$this->Width = $width;
+		return $this->forTemplate();
+	}
 
 	public static function VimeoShortCodeHandler($arguments, $caption= null, $parser = null) {
 		if(empty($arguments['id'])) {
